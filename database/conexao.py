@@ -14,7 +14,8 @@ def criar_tabela_pacientes():
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    nome TEXT NOT NULL,
                    idade INTEGER,
-                   telefone TEXT
+                   telefone TEXT,
+                   genero TEXT
                    )
                    """)
     conexao.commit()
