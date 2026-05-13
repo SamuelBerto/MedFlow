@@ -1,4 +1,5 @@
 from database.conexao import criar_tabela_pacientes
+from utils.menu import exibir_menu
 from services.paciente_service import (
     cadastrar_paciente,
     listar_pacientes,
@@ -9,14 +10,8 @@ from services.paciente_service import (
 criar_tabela_pacientes()
 
 while True:
-    print("\n🏥 MEDFLOW")
-    print("Bem-vindo ao sistema de gerenciamento de pacientes!")
-    print("1. Cadastrar paciente")
-    print("2. Listar pacientes")
-    print("3. Editar paciente")
-    print("4. Deletar paciente")
-    print("0. Sair")
-
+    exibir_menu()
+    
     opcao = input("Escolha uma opção: ")
 
     if opcao == "1":
