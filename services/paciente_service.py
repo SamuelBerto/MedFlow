@@ -53,7 +53,18 @@ def editar_paciente():
                     WHERE id = ?""", (novo_nome, nova_idade, novo_telefone, novo_genero, id_paciente))
     conexao.commit()
     conexao.close()
-    
+
     print("✅ Paciente atualizado com sucesso!")
 
-    
+def deletar_paciente():
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    id_paciente = input("Digite o ID do paciente a ser deletado: ")
+
+    cursor.execute("""DELETE FROM pacientes WHERE id = ?""", (id_paciente,))
+
+    conexao.commit()
+    conexao.close()
+
+    print("🗑️ Paciente deletado com sucesso!✅")
