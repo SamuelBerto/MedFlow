@@ -16,3 +16,24 @@ def cadastrar_paciente():
 
     print("✅ Paciente cadastrado com sucesso!")
 
+def listar_pacientes():
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("SELECT *FROM pacientes")
+
+    pacientes = cursor.fetchall()
+
+    print("\n📋 Lista de Pacientes:\n")
+    
+    for paciente in pacientes:
+        print(f"""
+              ID: {paciente[0]}
+              Nome: {paciente[1]}
+              Idade: {paciente[2]}
+              Telefone: {paciente[3]}
+              Gênero: {paciente[4]}
+              -------------------------
+              """)
+    conexao.close()
+    
