@@ -36,4 +36,24 @@ def listar_pacientes():
               -------------------------
               """)
     conexao.close()
+
+def editar_paciente():
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    id_paciente = input("Digite o ID do paciente: ")
+
+    novo_nome = input("Novo nome do paciente: ")
+    nova_idade = input("Nova idade do paciente: ")
+    novo_telefone = input("Novo telefone do paciente: ")
+    novo_genero = input("Novo gênero do paciente: ")
+
+    cursor.execute("""UPDATE pacientes
+                    SET nome = ?, idade = ?, telefone = ?, genero = ?
+                    WHERE id = ?""", (novo_nome, nova_idade, novo_telefone, novo_genero, id_paciente))
+    conexao.commit()
+    conexao.close()
+    
+    print("✅ Paciente atualizado com sucesso!")
+
     

@@ -1,7 +1,8 @@
 from database.conexao import criar_tabela_pacientes
 from services.paciente_service import (
     cadastrar_paciente,
-    listar_pacientes
+    listar_pacientes,
+    editar_paciente
 )
 
 criar_tabela_pacientes()
@@ -11,6 +12,7 @@ while True:
     print("Bem-vindo ao sistema de gerenciamento de pacientes!")
     print("1. Cadastrar paciente")
     print("2. Listar pacientes")
+    print("3. Editar paciente")
     print("0. Sair")
 
     opcao = input("Escolha uma opção: ")
@@ -19,7 +21,8 @@ while True:
         cadastrar_paciente()
     elif opcao == "2":
         listar_pacientes()
-
+    elif opcao == "3":
+        editar_paciente()  
     elif opcao == "0":
         print("👋 Encerrando o sistema...")
         break
