@@ -4,10 +4,22 @@ def cadastrar_paciente():
     conexao = conectar()
     cursor = conexao.cursor()
 
-    nome = input("Nome do paciente: ")
-    idade = int(input("Idade do paciente: "))
-    telefone = input("Telefone do paciente: ")
-    genero = input("Gênero do paciente: ")
+    nome = input("Nome do paciente: ").strip()
+    if nome == "":
+        print("❌ O nome não pode ficar vazio!")
+        return
+    try:
+        idade = int(input("Idade do paciente: "))
+    except ValueError:
+        print("❌ A idade deve ser um número!")
+        return
+    telefone = input("Telefone do paciente: ").strip()
+
+    if telefone == "":
+        print("❌ O telefone não pode ficar vazio!")
+        return
+   
+    genero = input("Gênero do paciente: ").strip()
 
     cursor.execute("INSERT INTO pacientes (nome, idade, telefone, genero) VALUES (?, ?, ?, ?)", (nome, idade, telefone, genero))
 
