@@ -20,3 +20,19 @@ def criar_tabela_pacientes():
                    """)
     conexao.commit()
     conexao.close()
+
+def criar_tabela_medicos():
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS medicos (
+                   id INTEGER PRIMARY KEY AUTOINCREMENT,
+                   nome TEXT NOT NULL,
+                   especialidade TEXT NOT NULL,
+                   telefone TEXT NOT NULL
+                   )
+                   """)
+    conexao.commit()
+    conexao.close()
+    

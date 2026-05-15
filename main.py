@@ -1,5 +1,9 @@
-from database.conexao import criar_tabela_pacientes
+from database import (
+    criar_tabela_pacientes,
+    criar_tabela_medicos
+)
 from utils.menu import exibir_menu
+
 from services.paciente_service import (
     cadastrar_paciente,
     listar_pacientes,
@@ -8,6 +12,7 @@ from services.paciente_service import (
 )
 
 criar_tabela_pacientes()
+criar_tabela_medicos()
 
 while True:
     exibir_menu()
