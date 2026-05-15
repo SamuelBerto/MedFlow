@@ -10,6 +10,30 @@ def agendar_consulta():
     data = input("Data da consulta (DD/MM/AAAA): ")
     horario = input("Horário da consulta: ")
 
+    cursor.execute(
+        "SELECT * FROM pacientes WHERE id = ?",
+        (paciente_id,)
+    )
+
+    paciente = cursor.fetchone()
+
+    if paciente is None:
+        print("❌ Paciente não encontrado!")
+        conexao.close()
+        return
+
+    cursor.execute(
+        "SELECT * FROM medicos WHERE id = ?",
+        (medico_id,)
+    )
+
+    medico = cursor.fetchone()
+
+    if medico is None:
+        print("❌ Médico não encontrado!")
+        conexao.close()
+        return
+
     cursor.execute("""
     INSERT INTO consultas (
         paciente_id,
