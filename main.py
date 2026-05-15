@@ -10,7 +10,10 @@ from services.paciente_service import (
     editar_paciente,
     deletar_paciente
 )
-
+from services.medico_service import (
+    cadastrar_medico,
+    listar_medicos
+)
 criar_tabela_pacientes()
 criar_tabela_medicos()
 
@@ -27,6 +30,10 @@ while True:
         editar_paciente()  
     elif opcao == "4":
         deletar_paciente()
+    elif opcao == "5":
+        cadastrar_medico()
+    elif opcao == "6":
+        listar_medicos()
     elif opcao == "0":
         print("👋 Encerrando o sistema...")
         break

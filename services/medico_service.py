@@ -28,7 +28,7 @@ def cadastrar_medico():
 
     print("✅ Médico cadastrado com sucesso!")
 
-    def listar_medicos():
+def listar_medicos():
         conexao = conectar()
         cursor = conexao.cursor()
 
