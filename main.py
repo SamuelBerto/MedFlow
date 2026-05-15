@@ -1,6 +1,7 @@
 from database.conexao import (
     criar_tabela_pacientes,
-    criar_tabela_medicos
+    criar_tabela_medicos,
+    criar_tabela_consultas
 )
 from utils.menu import exibir_menu
 
@@ -16,7 +17,7 @@ from services.medico_service import (
 )
 criar_tabela_pacientes()
 criar_tabela_medicos()
-
+criar_tabela_consultas()
 while True:
     exibir_menu()
     

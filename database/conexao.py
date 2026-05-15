@@ -36,3 +36,21 @@ def criar_tabela_medicos():
     conexao.commit()
     conexao.close()
     
+def criar_tabela_consultas():
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS consultas (
+                   id INTEGER PRIMARY KEY AUTOINCREMENT,
+                   paciente_id INTEGER NOT NULL,
+                   medico_id INTEGER NOT NULL,
+                   data TEXT NOT NULL,
+                   hora TEXT NOT NULL,
+                   FOREIGN KEY (paciente_id) REFERENCES pacientes(id),
+                   FOREIGN KEY (medico_id) REFERENCES medicos(id)
+                   )
+                   """)
+    conexao.commit()
+    conexao.close()
+    
