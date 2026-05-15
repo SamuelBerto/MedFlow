@@ -1,4 +1,4 @@
-from database import (
+from database.conexao import (
     criar_tabela_pacientes,
     criar_tabela_medicos
 )
