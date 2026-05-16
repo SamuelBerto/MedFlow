@@ -83,3 +83,25 @@ Horário: {consulta[4]}
 """)
 
     conexao.close()
+
+def editar_consulta():
+    conexao = conectar()
+    cursor = conexao. cursor()
+
+    id_consulta = input("ID da consulta a ser editada: ")
+
+    novo_paciente_id = input("Novo ID do paciente: ")
+    novo_medico_id = input("Novo ID do médico: ")
+    nova_data = input("Nova data da consulta (DD/MM/AAAA): ")
+    novo_horario = input("Novo horário da consulta: ")  
+
+    cursor.execute("""
+    UPDATE consultas
+    SET paciente_id = ?, medico_id = ?, data = ?, horario = ?
+    WHERE id = ?
+    """, (novo_paciente_id, novo_medico_id, nova_data, novo_horario, id_consulta))
+
+    conexao.commit()
+    conexao.close()
+
+    print("✏️ Consulta editada com sucesso!")
