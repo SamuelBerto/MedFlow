@@ -9,5 +9,7 @@ def exibir_menu():
     print("6. Listar médicos")
     print("7. Agendar consulta")
     print("8. Listar consultas")
+    print("9. Editar consulta")
+    print("10. Deletar consulta")
     print("0. Sair")
     

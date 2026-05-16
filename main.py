@@ -17,13 +17,16 @@ from services.medico_service import (
 )
 from services.consulta_service import (
     agendar_consulta,
-    listar_consultas
+    listar_consultas,
+    editar_consulta,
+    deletar_consulta
 )
 from database.conexao import (
     criar_tabela_pacientes,
     criar_tabela_medicos,
     criar_tabela_consultas
 )
+
 
 criar_tabela_pacientes()
 criar_tabela_medicos()
@@ -49,6 +52,10 @@ while True:
         agendar_consulta()
     elif opcao == "8":
         listar_consultas()
+    elif opcao == "9":
+        editar_consulta()
+    elif opcao == "10":
+        deletar_consulta()
     elif opcao == "0":
         print("👋 Encerrando o sistema...")
         break

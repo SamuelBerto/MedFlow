@@ -105,3 +105,19 @@ def editar_consulta():
     conexao.close()
 
     print("✏️ Consulta editada com sucesso!")
+
+def deletar_consulta():
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    id_consulta = input("ID da consulta a ser deletada: ")
+
+    cursor.execute("""
+    DELETE FROM consultas
+    WHERE id = ?
+    """, (id_consulta,))
+
+    conexao.commit()
+    conexao.close()
+
+    print("🗑️ Consulta deletada com sucesso!")
