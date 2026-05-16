@@ -1,21 +1,39 @@
 # 🏥 MedFlow
 
-Sistema de gestão de saúde desenvolvido com Python.
+Sistema de gerenciamento de saúde desenvolvido em Python com arquitetura modular, banco de dados SQLite e operações CRUD completas.
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## 🛠️ Tecnologias utilizadas
 - Python
 - SQLite
+- SQL
 - Git/GitHub
 
 ---
 
-## 📌 Funcionalidades
+## ✨ Funcionalidades
+
+### 👤 Pacientes
 - Cadastro de pacientes
+- Listagem de pacientes
+- Edição de pacientes
+- Remoção de pacientes
+
+### 👨‍⚕️ Médicos
 - Cadastro de médicos
+- Listagem de médicos
+
+### 📅 Consultas
 - Agendamento de consultas
-- Histórico médico
+- Listagem de consultas
+- Edição de consultas
+- Cancelamento de consultas
+
+### 🛡️ Validações
+- Verificação de IDs válidos
+- Campos obrigatórios
+- Validação de entradas
 
 ---
 
@@ -26,6 +44,14 @@ Projeto criado para praticar:
 - APIs
 - Arquitetura de software
 - Boas práticas de desenvolvimento
+
+---
+## 🚧 Próximas melhorias
+
+- API Flask
+- Interface web
+- Sistema de login
+- Dashboard administrativo
 
 ---
 
@@ -43,6 +69,15 @@ MedFlow/
 ├── requirements.txt
 └── README.md
 
+```
+---
+
+## ▶️ Como executar
+
+```bash
+python main.py
+
+```
 ---
 
 ## 👨‍💻 Autor
