@@ -54,7 +54,8 @@ def medicos():
 
     conexao.close()
 
-    return lista_medicos
+    return render_template("medicos.html", medicos=lista_medicos
+    )     
 
 
 

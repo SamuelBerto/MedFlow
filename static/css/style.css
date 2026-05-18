@@ -103,3 +103,22 @@ td {
 tr:hover {
     background-color: #f1f5f9;
 }
+/* RESPONSIVIDADE DAS PÁGINAS */
+
+.hero {
+    min-height: 100vh;
+}
+
+/* TÍTULOS */
+
+.hero h1 {
+    color: #0f172a;
+}
+
+/* TABELA */
+
+table {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
