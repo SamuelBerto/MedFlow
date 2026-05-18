@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedFlow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <nav class="navbar">
 
-    <h1>🏥 MedFlow</h1>
-    <p>Sistema de gerenciamento de saúde.</p>
-    
+        <div class="logo">🏥MedFlow</div>
+
+        <div class="menu">
+            <a href="#">Início</a>
+            <a href="#">Pacientes</a>
+            <a href="#">Médicos</a>
+            <a href="#">Consultas</a>
+            <a href="#">Login</a>
+        </div>
+    </nav>
+     <section class="hero">
+
+        <h1>Gestão hospitalar inteligente</h1>
+
+        <p>
+            Gerencie pacientes, médicos e consultas
+            de forma moderna, rápida e eficiente.
+        </p>
+
+        <a href="#" class="btn">
+            Agendar Consulta
+        </a>
+
+    </section>
 </body>
 </html>
