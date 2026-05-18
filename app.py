@@ -94,7 +94,10 @@ def consultas():
 
     conexao.close()
 
-    return lista_consultas
+    return render_template(
+    "consultas.html",
+    consultas=lista_consultas
+    )
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
