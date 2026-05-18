@@ -57,5 +57,43 @@ def medicos():
     return lista_medicos
 
 
+
+
+@app.route("/consultas")
+def consultas():
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("""
+    SELECT
+        consultas.id,
+        pacientes.nome,
+        medicos.nome,
+        consultas.data,
+        consultas.hora
+    FROM consultas
+    JOIN pacientes
+        ON consultas.paciente_id = pacientes.id
+    JOIN medicos
+        ON consultas.medico_id = medicos.id
+    """)
+
+    consultas = cursor.fetchall()
+
+    lista_consultas = []
+
+    for consulta in consultas:
+        lista_consultas.append({
+            "id": consulta[0],
+            "paciente": consulta[1],
+            "medico": consulta[2],
+            "data": consulta[3],
+            "hora": consulta[4]
+        })
+
+    conexao.close()
+
+    return lista_consultas
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
