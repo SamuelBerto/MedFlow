@@ -1,12 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 from database.conexao import conectar
 
 app = Flask(__name__)
 
-
 @app.route("/")
 def home():
-    return "🏥 MedFlow API Online!"
+    return render_template("index.html")
 
 
 @app.route("/pacientes")
