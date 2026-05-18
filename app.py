@@ -30,7 +30,8 @@ def pacientes():
 
     conexao.close()
 
-    return lista_pacientes
+    return render_template("pacientes.html", pacientes=lista_pacientes
+                           )
 
 @app.route("/medicos")
 def medicos():
