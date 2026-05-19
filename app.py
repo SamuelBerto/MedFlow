@@ -76,9 +76,6 @@ def medicos():
     return render_template("medicos.html", medicos=lista_medicos
     )     
 
-
-
-
 @app.route("/consultas")
 def consultas():
     conexao = conectar()
@@ -168,6 +165,10 @@ def novo_medico():
         return redirect("/medicos")
 
     return render_template("novo_medico.html")
+
+@app.route("/nova-consulta")
+def nova_consulta():
+    return render_template("nova_consulta.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
