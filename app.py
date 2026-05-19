@@ -144,6 +144,30 @@ def novo_paciente():
 
     return render_template("novo_paciente.html")
 
+@app.route("/novo-medico", methods=["GET", "POST"])
+def novo_medico():
+
+    if request.method == "POST":
+
+        nome = request.form["nome"]
+        especialidade = request.form["especialidade"]
+        telefone = request.form["telefone"]
+
+        conexao = conectar()
+        cursor = conexao.cursor()
+
+        cursor.execute("""
+            INSERT INTO medicos
+            (nome, especialidade, telefone)
+            VALUES (?, ?, ?)
+        """, (nome, especialidade, telefone))
+
+        conexao.commit()
+        conexao.close()
+
+        return redirect("/medicos")
+
+    return render_template("novo_medico.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
