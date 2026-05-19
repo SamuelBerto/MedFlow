@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from database.conexao import conectar
 
 app = Flask(__name__)
@@ -118,9 +118,32 @@ def consultas():
     consultas=lista_consultas
     )
 
-@app.route("/novo-paciente")
+
+@app.route("/novo-paciente", methods=["GET", "POST"])
 def novo_paciente():
+
+    if request.method == "POST":
+
+        nome = request.form["nome"]
+        idade = request.form["idade"]
+        telefone = request.form["telefone"]
+        genero = request.form["genero"]
+
+        conexao = conectar()
+        cursor = conexao.cursor()
+
+        cursor.execute("""
+            INSERT INTO pacientes (nome, idade, telefone, genero)
+            VALUES (?, ?, ?, ?)
+        """, (nome, idade, telefone, genero))
+
+        conexao.commit()
+        conexao.close()
+
+        return redirect("/pacientes")
+
     return render_template("novo_paciente.html")
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
