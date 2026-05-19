@@ -118,5 +118,9 @@ def consultas():
     consultas=lista_consultas
     )
 
+@app.route("/novo-paciente")
+def novo_paciente():
+    return render_template("novo_paciente.html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
