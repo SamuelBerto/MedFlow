@@ -144,3 +144,22 @@ table {
     font-weight: bold;
     color: #0ea5e9;
 }
+/* FORMULÁRIO DE CADASTRO */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 400px;
+    margin-top: 30px;
+}
+.formulario input,
+.formulario select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.formulario button {
+   border: none;
+   cursor: pointer;
+}
