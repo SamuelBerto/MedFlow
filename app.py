@@ -5,7 +5,26 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("SELECT COUNT(*) FROM pacientes")
+    total_pacientes = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM medicos")
+    total_medicos = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM consultas")
+    total_consultas = cursor.fetchone()[0]
+
+    conexao.close()
+
+    return render_template(
+        "index.html",
+        total_pacientes=total_pacientes,
+        total_medicos=total_medicos,
+        total_consultas=total_consultas
+    )
 
 
 @app.route("/pacientes")
