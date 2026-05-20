@@ -166,9 +166,46 @@ def novo_medico():
 
     return render_template("novo_medico.html")
 
-@app.route("/nova-consulta")
+@app.route("/nova-consulta", methods = ["GET", "POST"])
 def nova_consulta():
-    return render_template("nova_consulta.html")
+
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    if request.method == "POST":
+
+        print("CONSULTA RECEBIDA")
+
+
+        paciente_id = request.form ["paciente_id"]
+        medico_id = request.form ["medico_id"]
+        data = request.form ["data"]
+        hora = request.form ["hora"]
+
+        cursor.execute("""
+            INSERT INTO consultas
+            (paciente_id, medico_id, data, hora)
+            VALUES (?, ?, ?, ?)
+        """, (paciente_id, medico_id, data, hora))
+
+        conexao.commit()
+        conexao.close()
+
+        return redirect("/consultas")
+
+    cursor.execute("SELECT id, nome FROM pacientes")
+    pacientes = cursor.fetchall()
+
+    cursor.execute("SELECT id, nome, especialidade FROM medicos")
+    medicos = cursor.fetchall()
+
+    conexao.close()
+
+    return render_template(
+        "nova_consulta.html",
+        pacientes=pacientes,
+        medicos=medicos
+    )
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

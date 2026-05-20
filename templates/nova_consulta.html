@@ -24,19 +24,43 @@
 
         <p>Agendamento de consultas do sistema.</p>
 
-        <form class="formulario">
+    <form method="POST" class="formulario">
 
-            <select>
-                <option>Selecione o Paciente</option>
-            </select>
+    <select name="paciente_id">
 
-            <select>
-                <option>Selecione o Médico</option>
-            </select>
+    <option value="">
+        Selecione o Paciente
+    </option>
 
-            <input type="date">
+    {% for paciente in pacientes %}
 
-            <input type="time">
+    <option value="{{ paciente[0] }}">
+        {{ paciente[1] }}
+    </option>
+
+    {% endfor %}
+
+    </select>
+
+           <select name="medico_id">
+
+    <option value="">
+        Selecione o Médico
+    </option>
+
+    {% for medico in medicos %}
+
+    <option value="{{ medico[0] }}">
+        {{ medico[1] }} - {{ medico[2] }}
+    </option>
+
+    {% endfor %}
+
+</select>
+
+            <input type="date" name="data">
+
+            <input type="time" name="hora">
 
             <button type="submit" class="btn">
                 Agendar Consulta
