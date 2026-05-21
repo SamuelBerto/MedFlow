@@ -141,6 +141,45 @@ def novo_paciente():
 
     return render_template("novo_paciente.html")
 
+@app.route("/editar-paciente/<int:id>", methods=["GET", "POST"])
+def editar_paciente(id):
+    
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    if request.method == "POST":
+    
+        nome = request.form["nome"]
+        idade = request.form["idade"]
+        telefone = request.form["telefone"]
+        genero = request.form["genero"]
+
+        cursor.execute("""
+                       UPDATE pacientes
+                       SET nome = ?,
+                            idade = ?,
+                            telefone = ?,
+                            genero = ?
+                          WHERE id = ?
+                          """, (nome, idade, telefone, genero, id))
+        conexao.commit()
+        conexao.close()
+
+        return redirect("/pacientes")
+    
+    cursor.execute("SELECT * FROM pacientes WHERE id = ?", (id,))
+
+    paciente = cursor.fetchone()
+
+    conexao.close()
+
+    return render_template(
+        "editar_paciente.html",
+        paciente=paciente
+    )
+
+
+
 @app.route("/novo-medico", methods=["GET", "POST"])
 def novo_medico():
 

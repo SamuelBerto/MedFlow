@@ -50,6 +50,11 @@
                 <td>{{ paciente.idade }}</td>
                 <td>{{ paciente.telefone }}</td>
                 <td>{{ paciente.genero }}</td>
+
+                <td>
+                    <a href="/editar-paciente/{{paciente.id}}" class="btn">✏️Editar</a>
+                    <a href="/excluir-paciente/{{paciente.id}}" class="btn">🗑️Excluir</a>
+                </td>
             </tr>
 
             {% endfor %}
