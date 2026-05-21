@@ -219,6 +219,55 @@ def novo_medico():
 
     return render_template("novo_medico.html")
 
+@app.route("/editar-medico/<int:id>", methods=["GET", "POST"])
+def editar_medico(id):
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    if request.method == "POST":
+
+        nome = request.form["nome"]
+        especialidade = request.form["especialidade"]
+        telefone = request.form["telefone"]
+
+        cursor.execute("""
+                       UPDATE medicos
+                       SET nome = ?,
+                            especialidade = ?,
+                            telefone = ?
+                          WHERE id = ?
+                          """, (nome, especialidade, telefone, id))
+        conexao.commit()
+        conexao.close()
+
+        return redirect("/medicos")
+
+    cursor.execute("SELECT * FROM medicos WHERE id = ?", (id,))
+
+    medico = cursor.fetchone()
+
+    conexao.close()
+
+    return render_template(
+        "editar_medico.html",
+        medico=medico
+    )
+@app.route("/excluir-medico/<int:id>")
+def excluir_medico(id):
+
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute(
+        "DELETE FROM medicos WHERE id = ?",
+        (id,)
+    )
+
+    conexao.commit()
+    conexao.close()
+
+    return redirect("/medicos")
+
 @app.route("/nova-consulta", methods = ["GET", "POST"])
 def nova_consulta():
 

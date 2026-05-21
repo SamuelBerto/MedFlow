@@ -47,6 +47,7 @@
                         <th>Nome</th>
                         <th>Especialidade</th>
                         <th>Telefone</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
 
@@ -59,6 +60,10 @@
                         <td>{{ medico.nome }}</td>
                         <td>{{ medico.especialidade }}</td>
                         <td>{{ medico.telefone }}</td>
+                        <td>
+                            <a href="/editar-medico/{{medico.id}}" class="btn">✏️Editar</a>
+                            <a href="/excluir-medico/{{medico.id}}" class="btn">🗑️Excluir</a>
+                        </td>
                     </tr>
 
                     {% endfor %}
