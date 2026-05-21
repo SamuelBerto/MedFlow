@@ -163,3 +163,8 @@ table {
    border: none;
    cursor: pointer;
 }
+.btn-acao {
+    padding: 8px 12px;
+    margin: 0 3px;
+    font-size: 14px;
+}
