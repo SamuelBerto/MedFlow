@@ -178,6 +178,20 @@ def editar_paciente(id):
         paciente=paciente
     )
 
+@app.route("/excluir-paciente/<int:id>")
+def excluir_paciente(id):
+
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute("DELETE FROM pacientes WHERE id = ?", (id,)
+    )
+
+    conexao.commit()
+    conexao.close()
+
+    return redirect("/pacientes")
+
 
 
 @app.route("/novo-medico", methods=["GET", "POST"])
