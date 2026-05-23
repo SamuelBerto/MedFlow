@@ -276,8 +276,6 @@ def nova_consulta():
 
     if request.method == "POST":
 
-        print("CONSULTA RECEBIDA")
-
 
         paciente_id = request.form ["paciente_id"]
         medico_id = request.form ["medico_id"]
@@ -308,6 +306,68 @@ def nova_consulta():
         pacientes=pacientes,
         medicos=medicos
     )
+
+@app.route("/editar-consulta/<int:id>", methods=["GET", "POST"])
+def editar_consulta(id):
+    
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    if request.method == "POST":
+
+        paciente_id = request.form["paciente_id"]
+        medico_id = request.form["medico_id"]
+        data = request.form["data"]
+        hora = request.form["hora"]
+
+        cursor.execute("""
+                       UPDATE consultas
+                       SET paciente_id = ?,
+                            medico_id = ?,
+                            data = ?,
+                            hora = ?
+                          WHERE id = ?
+                          """, (paciente_id, medico_id, data, hora, id))
+        
+        conexao.commit()
+        conexao.close()
+
+        return redirect("/consultas")
+
+    cursor.execute("SELECT * FROM consultas WHERE id = ?", (id,))
+
+    consulta = cursor.fetchone()
+
+    cursor.execute("SELECT id, nome FROM pacientes")
+    pacientes = cursor.fetchall()
+
+    cursor.execute("SELECT id, nome, especialidade FROM medicos")
+    medicos = cursor.fetchall()
+
+    conexao.close()
+
+    return render_template(
+        "editar_consulta.html",
+        consulta=consulta,
+        pacientes=pacientes,
+        medicos=medicos
+    )
+
+@app.route("/excluir-consulta/<int:id>")
+def excluir_consulta(id):
+
+    conexao = conectar()
+    cursor = conexao.cursor()
+
+    cursor.execute(
+        "DELETE FROM consultas WHERE id = ?",
+        (id,)
+    )
+
+    conexao.commit()
+    conexao.close()
+
+    return redirect("/consultas")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
