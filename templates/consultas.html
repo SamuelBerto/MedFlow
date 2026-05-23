@@ -48,6 +48,7 @@
                         <th>Médico</th>
                         <th>Data</th>
                         <th>Hora</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
 
@@ -61,6 +62,10 @@
                         <td>{{ consulta.medico }}</td>
                         <td>{{ consulta.data }}</td>
                         <td>{{ consulta.hora }}</td>
+                        <td>
+                            <a href="/editar-consulta/{{consulta.id}}" class="btn">✏️Editar</a>
+                            <a href="/excluir-consulta/{{consulta.id}}" class="btn">🗑️Excluir</a>
+                        </td>
                     </tr>
 
                     {% endfor %}
