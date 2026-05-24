@@ -17,13 +17,30 @@ def home():
     cursor.execute("SELECT COUNT(*) FROM consultas")
     total_consultas = cursor.fetchone()[0]
 
+    cursor.execute("""
+                   SELECT
+                   pacientes.nome,
+                   medicos.nome,
+                   consultas.data,
+                   consultas.hora
+                   FROM consultas
+                   JOIN pacientes
+                   ON consultas.paciente_id = pacientes.id
+                   JOIN medicos
+                   ON consultas.medico_id = medicos.id
+                   ORDER BY consultas.data ASC, consultas.hora ASC
+                   LIMIT 1
+                   """)
+    proxima_consulta = cursor.fetchone()
+
     conexao.close()
 
     return render_template(
         "index.html",
         total_pacientes=total_pacientes,
         total_medicos=total_medicos,
-        total_consultas=total_consultas
+        total_consultas=total_consultas,
+        proxima_consulta=proxima_consulta
     )
 
 
