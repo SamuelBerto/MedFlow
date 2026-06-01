@@ -1,10 +1,15 @@
 from flask import Flask, render_template, request, redirect
 from database.conexao import conectar
+from datetime import date 
+
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
+
+    hoje = date.today()
+
     conexao = conectar()
     cursor = conexao.cursor()
 
@@ -17,13 +22,23 @@ def home():
     cursor.execute("SELECT COUNT(*) FROM consultas")
     total_consultas = cursor.fetchone()[0]
 
+    cursor.execute("""
+                   SELECT COUNT(*)
+                   FROM consultas
+                   WHERE data = ?
+                   """, (hoje,))
+    
+    consultas_hoje =cursor.fetchone()[0]
+
+
     conexao.close()
 
     return render_template(
         "index.html",
         total_pacientes=total_pacientes,
         total_medicos=total_medicos,
-        total_consultas=total_consultas
+        total_consultas=total_consultas,
+        consultas_hoje=consultas_hoje
     )
 
 
