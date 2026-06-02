@@ -128,6 +128,21 @@ python main.py
 python app.py
 
 ```
+## 📸 Screenshots
+
+### Dashboard
+v.1
+<img width="1674" height="1008" alt="adc-consultasemhome1" src="https://github.com/user-attachments/assets/14025fdd-7fbc-47b4-a7dd-ad62096264be" />
+
+
+### Pacientes
+v.2
+<img width="1674" height="1005" alt="pacientes-v2" src="https://github.com/user-attachments/assets/f718813a-c90f-4503-b200-530a336faeeb" />
+
+
+### Consultas
+v.1
+<img width="1675" height="1008" alt="editarconsultasv1" src="https://github.com/user-attachments/assets/5f74015d-e542-4302-869d-67722b9f65f2" />
 
 
 ## 👨‍💻 Autor
