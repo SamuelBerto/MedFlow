@@ -9,6 +9,7 @@ body {
     background-color: #f4f7fb;
     color: #1e293b;
 }
+
 /* NAVBAR */
 .navbar {
     background-color: #0f172a;
@@ -20,22 +21,27 @@ body {
 
     padding: 20px 50px;
 }
+
 .logo {
     font-size: 24px;
     font-weight: bold;
 }
+
 .menu {
     display: flex;
     gap: 25px;
 }
+
 .menu a {
     color: white;
     text-decoration: none;
-    transition:  0.3s;
+    transition: 0.3s;
 }
+
 .menu a:hover {
     color: #38bdf8;
 }
+
 /*HERO */
 .hero {
     height: 85vh;
@@ -48,10 +54,12 @@ body {
     text-align: center;
     padding: 20px;
 }
+
 .hero h1 {
     font-size: 56px;
     margin-bottom: 20px;
 }
+
 .hero p {
     font-size: 20px;
     max-width: 700px;
@@ -66,9 +74,11 @@ body {
     text-decoration: none;
     transition: 0.3s;
 }
+
 .btn:hover {
     background-color: #0284c7;
 }
+
 /* TABELA */
 
 .tabela-container {
@@ -80,7 +90,7 @@ body {
 
     border-radius: 15px;
 
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 table {
@@ -103,6 +113,7 @@ td {
 tr:hover {
     background-color: #f1f5f9;
 }
+
 /* RESPONSIVIDADE DAS PÁGINAS */
 
 .hero {
@@ -122,34 +133,40 @@ table {
     border-radius: 10px;
     overflow: hidden;
 }
+
 /* DASHBOARD */
 .dashboard {
     display: flex;
     justify-content: center;
     gap: 30px;
 }
+
 .card {
     background: white;
     padding: 25px;
     border-radius: 25px;
     min-width: 220px;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 
     transition: all 0.3s ease;
 }
+
 .card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 10 px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
+
 .card h2 {
-    margin-bottom: 15px;    
+    margin-bottom: 15px;
 }
+
 .card p {
     font-size: 36px;
     font-weight: bold;
     color: #0ea5e9;
 }
+
 /* FORMULÁRIO DE CADASTRO */
 .formulario {
     display: flex;
@@ -158,6 +175,7 @@ table {
     width: 400px;
     margin-top: 30px;
 }
+
 .formulario input,
 .formulario select {
     padding: 12px;
@@ -165,12 +183,45 @@ table {
     border-radius: 10px;
     font-size: 16px;
 }
+
 .formulario button {
-   border: none;
-   cursor: pointer;
+    border: none;
+    cursor: pointer;
 }
+
 .btn-acao {
     padding: 8px 12px;
     margin: 0 3px;
     font-size: 14px;
+}
+
+/* AÇÕES RÁPIDAS */
+.acoes-rapidas {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.btn-acao {
+    background-color: white;
+    color: #0f172a;
+
+    text-decoration: none;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-acao:hover {
+    transform: translateY(-5px);
+    background-color: #58a4ca;
+    color: white;    
+    border-radius: 15px;
+    
 }
