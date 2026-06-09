@@ -21,24 +21,40 @@
     </nav>
     <section class="hero">
 
-    <div class="hero-banner">
+ <div class="hero-banner">
 
-        <span class="hero-tag">
-            🏥 Sistema Hospitalar Inteligente
-        </span>
+    <div class="hero-content">
 
-        <h1>MedFlow</h1>
+        <div class="hero-text">
 
-        <p>
-            Plataforma moderna para gerenciamento
-            de pacientes, médicos e consultas.
-        </p>
+            <span class="hero-tag">
+                🏥 Sistema Hospitalar Inteligente
+            </span>
+        
+            <h1>MedFlow</h1>
 
-        <a href="/nova-consulta" class="btn">
-            Agendar Consulta
-        </a>
+            <p>
+               Sistema inteligente para gestão de pacientes,
+               consultas e profissionais da saúde.
+            </p>
+
+            <a href="/nova-consulta" class="btn">
+                Agendar Consulta
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="{{ url_for('static', filename='img/equipe-v3-img.jfif') }}"
+                alt="Equipe Médica">
+
+        </div>
 
     </div>
+
+</div>
         <div class="acoes-rapidas">
             <a href="/novo-paciente" class="btn-acao">
                 ➕ Novo Paciente
