@@ -171,9 +171,9 @@ table {
 }
 
 .card p {
-    font-size: 36px;
-    font-weight: bold;
-    color: #0ea5e9;
+    font-size: 42px;
+    font-weight: 700;
+    margin-top: 10px;
 }
 
 /* FORMULÁRIO DE CADASTRO */
@@ -289,7 +289,7 @@ table {
 }
 .hero-image img {
     width: 100%;
-    max-width: 420%;
+    max-width: 500%;
     border-radius: 20px;
 
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -298,4 +298,17 @@ table {
 }
 .hero-image img:hover {
     transform: scale(1.03);
+}
+/* CARDS PERSONALIZADOS */
+.pacientes-card {
+    border-top: 6px solid #0ea5e9;
+}
+.medicos-card {
+    border-top: 6px solid #10b981;
+}
+.consultas-card {
+    border-top: 6px solid #f59e0b;
+}
+.hoje-card {
+    border-top: 6px solid #ef4444;
 }
