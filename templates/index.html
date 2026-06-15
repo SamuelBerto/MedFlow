@@ -69,29 +69,29 @@
 
         <section class="dashboard">
             <div class="card pacientes-card">
-                 <h2>👤 Pacientes</h2>
+                 <h2> Pacientes</h2>
                  <p>{{ total_pacientes }}</p>
             </div>
 
             <div class="card medicos-card">
-                <h2>👨‍⚕️ Médicos</h2>
+                <h2> Médicos</h2>
                 <p>{{ total_medicos }}</p>
                 </div>
                 
                 <div class="card consultas-card">
-                    <h2>📅 Consultas</h2>
+                    <h2> Consultas</h2>
                     <p>{{ total_consultas }}</p>
                 </div>
 
                 <div class="card hoje-card">
-                    <h2>📈 Consultas Hoje</h2>
+                    <h2> Consultas Hoje</h2>
                     <p>{{ consultas_hoje }}</p>
 
                 </div>
                 
                 {% if proxima_consulta %}
                 <div class="card">
-                    <h2>⏰ Próxima Consulta</h2>
+                    <h2> Próxima Consulta</h2>
                 
                     <p>{{ proxima_consulta[0] }}</p>
                 
@@ -103,6 +103,30 @@
                 {% endif %}
                 
                 </section>
+         <section class="ultimas-consultas">
+            <h2> Últimas Consultas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Médico</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for consulta in ultimas_consultas %}
+                    <tr>
+                        <td>{{ consulta[0] }}</td>
+                        <td>{{ consulta[1] }}</td>
+                        <td>{{ consulta[2] }}</td>
+                        <td>{{ consulta[3] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+         </section>       
+         
 
     </section>
 </body>

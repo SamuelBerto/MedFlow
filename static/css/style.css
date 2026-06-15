@@ -116,10 +116,14 @@ table {
 }
 
 th {
-    background-color: #0f172a;
-    color: white;
+    background-color: #0ea5e9;
+
+    color:#082f49;
 
     padding: 15px;
+
+    font-weight: 600;
+    letter-spacing: 0.05px;
 }
 
 td {
@@ -321,3 +325,25 @@ table {
 .hoje-card {
     border-top: 6px solid #ef4444;
 }
+
+/* ÚLTIMAS CONSULTAS */
+.ultimas-consultas {
+    width: 100%;
+    max-width: 1200px;
+
+    background-color: white;
+    
+    padding: 30px;
+
+    border-radius: 25px;
+
+    margin-top: 60px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.ultimas-consultas h2 {
+    margin-bottom: 20px;
+    color: #0f172a;
+    ;
+}
+
