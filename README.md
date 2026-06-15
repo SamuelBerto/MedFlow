@@ -13,8 +13,10 @@ Sistema de gerenciamento de saúde desenvolvido em Python com arquitetura modula
 
 ## 🎞️ Versão atual do Projeto em GIF. 
 ---
-V.3
-<img width="1152" height="648" alt="medflowGIFV3" src="https://github.com/user-attachments/assets/4877aff0-d212-48a7-ae9b-4f737c7fff2b" />
+V.4
+
+<img width="1152" height="648" alt="medflow-gif-v4" src="https://github.com/user-attachments/assets/ad977c49-0374-4b01-a6d0-76c5dc9c1de5" />
+
 
 
 ## ✨ Funcionalidades
@@ -52,6 +54,9 @@ V.1
 V.2
 <img width="1152" height="648" alt="medflowGIFV2" src="https://github.com/user-attachments/assets/1b720d49-ea6f-4fef-9081-7279a3407e43" />
 
+---
+V.3
+<img width="1152" height="648" alt="medflowGIFV3" src="https://github.com/user-attachments/assets/4877aff0-d212-48a7-ae9b-4f737c7fff2b" />
 
 
 ## 📚 Objetivo do projeto
@@ -130,19 +135,10 @@ python app.py
 ```
 ## 📸 Screenshots
 
-### Dashboard
-v.1
-<img width="1674" height="1008" alt="adc-consultasemhome1" src="https://github.com/user-attachments/assets/14025fdd-7fbc-47b4-a7dd-ad62096264be" />
+<img width="1678" height="1008" alt="melhora-ui-home-v2" src="https://github.com/user-attachments/assets/bef66872-c274-4d19-b41f-a8bc93d901ff" />
 
 
-### Pacientes
-v.2
-<img width="1674" height="1005" alt="pacientes-v2" src="https://github.com/user-attachments/assets/f718813a-c90f-4503-b200-530a336faeeb" />
 
-
-### Consultas
-v.1
-<img width="1675" height="1008" alt="editarconsultasv1" src="https://github.com/user-attachments/assets/5f74015d-e542-4302-869d-67722b9f65f2" />
 
 
 ## 👨‍💻 Autor
