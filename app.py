@@ -30,6 +30,22 @@ def home():
     
     consultas_hoje =cursor.fetchone()[0]
 
+    cursor.execute("""
+                   SELECT
+                   pacientes.nome,
+                     medicos.nome,
+                        consultas.data,
+                        consultas.hora
+                   FROM consultas 
+                   JOIN pacientes
+                     ON consultas.paciente_id = pacientes.id
+                   JOIN medicos
+                   ON consultas.medico_id = medicos.id
+                   ORDER BY consultas.data ASC, consultas.hora ASC
+                   LIMIT 1
+                     """)
+    proxima_consulta = cursor.fetchone()
+
 
     conexao.close()
 
@@ -38,7 +54,8 @@ def home():
         total_pacientes=total_pacientes,
         total_medicos=total_medicos,
         total_consultas=total_consultas,
-        consultas_hoje=consultas_hoje
+        consultas_hoje=consultas_hoje,
+        proxima_consulta=proxima_consulta
     )
 
 
