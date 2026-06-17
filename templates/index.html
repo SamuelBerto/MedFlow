@@ -28,7 +28,7 @@
         <div class="hero-text">
 
             <span class="hero-tag">
-                🏥 Sistema Hospitalar Inteligente
+                 Sistema Hospitalar Inteligente
             </span>
         
             <h1>MedFlow</h1>
@@ -93,14 +93,23 @@
                 <div class="card">
                     <h2> Próxima Consulta</h2>
                 
-                    <p>{{ proxima_consulta[0] }}</p>
+                    <h2>Próxima Consulta</h2>
                 
-                    <small>
-                        Dr(a). {{ proxima_consulta[1] }} <br>
+                    <div class="proxima-paciente">
+                        {{ proxima_consulta[0] }}
+                    </div>
+                
+                    <div class="proxima-info">
+                        Dr(a). {{ proxima_consulta[1] }}
+                    </div>
+                
+                    <div class="proxima-data">
                         {{ proxima_consulta[2] }} às {{ proxima_consulta[3] }}
-                    </small>
+                    </div>
+                
                 </div>
                 {% endif %}
+                
                 
                 </section>
          <section class="ultimas-consultas">
