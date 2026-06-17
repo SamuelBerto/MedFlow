@@ -326,24 +326,48 @@ table {
     border-top: 6px solid #ef4444;
 }
 
-/* ÚLTIMAS CONSULTAS */
-.ultimas-consultas {
-    width: 100%;
-    max-width: 1200px;
+/* PRÓXIMA CONSULTA */
 
+.proxima-consulta-card {
     background-color: white;
-    
-    padding: 30px;
+    border-top: 6px solid #8b5cf6;
+
+    min-width: 260px;
+    padding: 25px;
 
     border-radius: 25px;
 
-    margin-top: 60px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
-.ultimas-consultas h2 {
-    margin-bottom: 20px;
+
+.proximo-paciente {
+    font-size: 18px;
+    font-weight: 600;
+
     color: #0f172a;
-    ;
+
+    margin-top: 10px;
+    margin-bottom: 12px;
 }
 
+.proxima-info {
+    font-size: 15px;
+    color: #475569;
+
+    margin-bottom: 6px;
+}
+
+.proxima-data {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 8px;
+}
+.ultimas-consultas {
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 25px;
+    margin-top: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
