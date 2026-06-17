@@ -321,3 +321,31 @@ table {
 .hoje-card {
     border-top: 6px solid #ef4444;
 }
+
+/* PROXIMA CONSULTA */
+
+.proxima-consulta-card {
+    border-top: 6px solid #8b5cf6;
+    min-width: 260px;
+}
+.proxima-paciente {
+
+    font-size: 18px;
+    font-weight: 600;
+    
+    color: #0f172a;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.proxima-info {
+    font-size: 15px;
+    color: #475569;
+
+    margin-bottom: 6px;
+}
+.proxima-data {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 8px;
+}
